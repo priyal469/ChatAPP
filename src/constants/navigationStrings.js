@@ -4,6 +4,7 @@ export default{
     HOME:'home',
     TAB_ROUTES:"tab_routes",
     SEARCH_POSTS:'search_posts',
-    DRAWER_ROUTES:'drawer_routes'
+    DRAWER_ROUTES:'drawer_routes',
+    CHARTS:"charts",
 
 }

@@ -120,43 +120,45 @@ import WrapperContainer from '../../Component/WrapperContainer';
      render(){
          const{isLoading}=this.state;
          return(
-             <WrapperContainer>
-            <View style={styles.mainView} >
+             <WrapperContainer >
+          
+           <View style={styles.mainView} >
            
 
-            <Image source={imagePath.appLogo} style={styles.appLogo} />
-            <Text style={styles.login_text}>Login</Text>
-            <Text style={styles.otpText1}>We will send you a One Time Password on your</Text>
-            <Text style={styles.otpText2}>phone number</Text>
-            <BorderTextInput placeholder={strings.ENTER_YOUR_NUMBER} _onChangeText={this._onChangeText} inputKey={'phoneNumber'} />
-            <SimpleBtn simpleBtn_Text={strings.GET_OTP} onPresSimpleBtn={this._onSendOtp} />
-           <Loader isLoading={isLoading}/>
+           <Image source={imagePath.appLogo} style={styles.appLogo} />
+           <Text style={styles.login_text}>Login</Text>
+           <Text style={styles.otpText1}>We will send you a One Time Password on your</Text>
+           <Text style={styles.otpText2}>phone number</Text>
+           <BorderTextInput placeholder={strings.ENTER_YOUR_NUMBER} _onChangeText={this._onChangeText} inputKey={'phoneNumber'} />
+           <SimpleBtn simpleBtn_Text={strings.GET_OTP} onPresSimpleBtn={this._onSendOtp} />
+          <Loader isLoading={isLoading}/>
 
-           <GoogleSigninButton
-    style={{ width: 310, height: 54 }}
-    size={GoogleSigninButton.Size.Wide}
-    color={GoogleSigninButton.Color.Light}
-    onPress={this.signIn}
-    disabled={this.state.isSigninInProgress} />
+          <GoogleSigninButton
+   style={{ width: 310, height: 54 }}
+   size={GoogleSigninButton.Size.Wide}
+   color={GoogleSigninButton.Color.Light}
+   onPress={this.signIn}
+   disabled={this.state.isSigninInProgress} />
 
-    <LoginButton
-          onLoginFinished={
-            (error, result) => {
-              if (error) {
-                console.log("login has error: " + result.error);
-              } else if (result.isCancelled) {
-                console.log("login is cancelled.");
-              } else {
-                AccessToken.getCurrentAccessToken().then(
-                  (data) => {
-                    console.log(data.accessToken.toString())
-                  }
-                )
-              }
-            }
-          }
-          onLogoutFinished={() => console.log("logout.")}/>
-        </View>
+   <LoginButton
+         onLoginFinished={
+           (error, result) => {
+             if (error) {
+               console.log("login has error: " + result.error);
+             } else if (result.isCancelled) {
+               console.log("login is cancelled.");
+             } else {
+               AccessToken.getCurrentAccessToken().then(
+                 (data) => {
+                   console.log(data.accessToken.toString())
+                 }
+               )
+             }
+           }
+         }
+         onLogoutFinished={() => console.log("logout.")}/>
+       </View>
+          
         </WrapperContainer>
          )
      }

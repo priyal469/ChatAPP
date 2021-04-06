@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import imagePath from '../constants/imagePath';
 import navigationStrings from '../constants/navigationStrings';
-import { Home, SearchPosts } from '../Screens';
+import { Charts, Home, SearchPosts } from '../Screens';
 import React from "react"
 import {View,Image,Text} from "react-native"
 import colors from '../styles/colors';
@@ -57,7 +57,29 @@ export default function TabRoutes() {
           ),
       }}
       />
-     
+      {/* <Tab.Screen name={navigationStrings.CHARTS} component={Charts}
+      options={{
+         
+        tabBarIcon: ({focused, color, size}) => (
+            <Image  source={imagePath.searchIcon}
+            style={{
+                width: size,
+                height: size,
+                tintColor: focused ? colors.themeColor : 'black',
+            }}
+            />
+          ),
+          tabBarLabel: ({focused, color, size}) => (
+            <Text style={{
+                color: focused ?colors.themeColor : 'black',
+                fontSize: 12,
+              }}>
+              Charts
+            </Text>
+          ),
+      }}
+      />
+      */}
     </Tab.Navigator>
   );
 }

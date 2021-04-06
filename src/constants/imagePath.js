@@ -5,4 +5,6 @@ export default{
     menuIcon:require('../assets/images/menuIcon.png'),
     searchIcon:require('../assets/images/searchIcon.png'),
     homeIcon:require('../assets/images/homeIcon.png'),
+    settingIcon:require('../assets/images/settingIcon.png'),
+    chartIcon:require('../assets/images/chartIcon.png'),
 }

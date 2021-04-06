@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {View,Text,FlatList} from 'react-native';
+import {View,Text,FlatList,Image, Dimensions } from 'react-native';
 
 import Loader from '../../Component/Loader';
 
@@ -9,6 +9,7 @@ import { showMessage } from 'react-native-flash-message';
 import Header from '../../Component/Header';
 import WrapperContainer from '../../Component/WrapperContainer';
 import colors from '../../styles/colors';
+import ImageZoom from 'react-native-image-pan-zoom';
 
 
 
@@ -73,7 +74,7 @@ import colors from '../../styles/colors';
              <WrapperContainer>
              <View style={{flex:1}} >
                  <Header headerText='Mar 2021' onClickMenuIcon={this.onOpenDrawer}/>
-              <View style={{flex:1}} >
+              {/* <View style={{flex:1}} >
               <FlatList
                     data={userPosts}
                     numColumns={2}
@@ -84,7 +85,14 @@ import colors from '../../styles/colors';
                     onEndReached={this._onEndReached}  
                     onEndReachedThreshold={0.9}    
                 /> 
-              </View>
+              </View> */}
+               <ImageZoom cropWidth={Dimensions.get('window').width}
+                       cropHeight={Dimensions.get('window').height}
+                       imageWidth={200}
+                       imageHeight={200}>
+                <Image style={{width:200, height:200}}
+                       source={{uri:'https://cdn.pixabay.com/photo/2014/02/27/16/10/tree-276014__340.jpg'}}/>
+            </ImageZoom>
              </View>
              </WrapperContainer>
          )

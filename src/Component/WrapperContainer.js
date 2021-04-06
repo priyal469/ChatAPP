@@ -8,7 +8,7 @@ const WrapperContainer = ({
   isLoading,
   bgColor = colors.white,
   statusBarColor = colors.themeColor,
-  barStyle = 'dark-content',
+  barStyle = 'light-content',
 }) => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: statusBarColor}}>
