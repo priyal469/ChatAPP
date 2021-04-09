@@ -3,17 +3,20 @@ import { Button, View } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import navigationStrings from '../constants/navigationStrings';
-import {Charts, Home,SearchPosts} from '../Screens/index'
+import {Charts, Home,QRScanner,SearchPosts, UserChat} from '../Screens/index'
 import TabRoutes from './TabRoutes';
 import DrawerContent from '../Component/DrawerContent';
+import colors from '../styles/colors';
 
 const Drawer=createDrawerNavigator();
 
 export default function DrawerRoutes() {
     return (
-        <Drawer.Navigator drawerContent={props=><DrawerContent {...props}/>} >
+        <Drawer.Navigator 
+        
+        drawerContent={props=><DrawerContent {...props}/>} drawerStyle={{backgroundColor:colors.white}} >
           <Drawer.Screen name={navigationStrings.TAB_ROUTES} component={TabRoutes} />
-          <Drawer.Screen name={navigationStrings.CHARTS} component={Charts} />
+         
         </Drawer.Navigator>
     );
   }

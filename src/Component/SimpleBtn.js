@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import{View,Text,StyleSheet,Image,TouchableOpacity} from "react-native";
 import colors from "../styles/colors";
+import commonStyles from "../styles/commonStyles";
 
 
 export default function SimpleBtn(props){
@@ -18,7 +19,7 @@ const styles=StyleSheet.create({
 touchable_btn:{
     height:45,
     width:'100%',
-    backgroundColor:colors.textBlue,
+    backgroundColor:colors.themeColor,
     alignItems:'center',
     justifyContent:'center',
     marginVertical:50
@@ -27,7 +28,7 @@ touchable_btn:{
 },
 touchable_btn_text:{
     color:colors.white,
-    fontSize:12
+   ...commonStyles.fontSize12
    
 }
 })

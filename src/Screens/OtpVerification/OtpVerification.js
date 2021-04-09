@@ -3,7 +3,6 @@ import {View,Text,Image,TextInput, StatusBar} from 'react-native';
 import SimpleBtn from '../../Component/SimpleBtn';
 import commonStyles from '../../styles/commonStyles';
 import styles from './styles';
-import strings from '../../constants/lang/en';
 import imagePath from '../../constants/imagePath';
 import Loader from '../../Component/Loader';
 import actions from '../../redux/actions';
@@ -11,6 +10,7 @@ import { showMessage } from 'react-native-flash-message';
 import navigationStrings from '../../constants/navigationStrings';
 import WrapperContainer from '../../Component/WrapperContainer';
 import colors from '../../styles/colors';
+import strings from '../../constants/lang';
 
 export default class OtpVerification extends Component{
     constructor(props){
@@ -67,8 +67,8 @@ export default class OtpVerification extends Component{
                 
             <View style={styles.mainView}>
             <Image source={imagePath.appLogo} style={styles.appLogo}/>
-            <Text style={styles.verification_text}>Verification</Text>
-            <Text style={styles.otpText1}>You will get a OTP via SMS</Text>
+            <Text style={styles.verification_text}>{strings.VERIFICATION_TEXT}</Text>
+            <Text style={styles.otpText1}>{strings.OTP_INFO_2}</Text>
              
              <TextInput placeholder={strings.ENTER_OTP}  onChangeText={text => this.setState({ otpInput: text })}/>
              <SimpleBtn simpleBtn_Text={strings.VERIFY} onPresSimpleBtn={this._onClickSimpleBtn}/>

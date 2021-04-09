@@ -13,3 +13,6 @@ export const OTP_VERIFY=getApiUrl('/user/v1/verifyOtp')
 
 export const USER_POSTS=getApiUrl('/user/v1/getUserSearch');
 export const SEARCH = getApiUrl('/user/v1/getUserNearMe');
+
+export const USER_CHAT_LIST=getApiUrl('/user/v1/getAllConversations');
+export const USER_MESSAGES =getApiUrl('/user/v1/getConversationMessages');

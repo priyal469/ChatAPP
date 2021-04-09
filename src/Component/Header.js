@@ -4,6 +4,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import imagePath from "../constants/imagePath";
 import navigationStrings from "../constants/navigationStrings";
 import colors from "../styles/colors";
+import commonStyles from "../styles/commonStyles";
 
  export default function Header(props){
 
@@ -39,12 +40,13 @@ flexDirection:'row'
        headerText:{
            
         padding:10,
-        fontSize:12
+    ...commonStyles.fontSize13
        },
      menuIcon:{
          height:20,
          width:20,
          tintColor:colors.black,
-         marginHorizontal:10
+         marginHorizontal:10,
+         tintColor:colors.themeColor
      }
 })

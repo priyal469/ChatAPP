@@ -1,5 +1,5 @@
-import React,{Component} from 'react';
-import {View,Text,FlatList,Image, Dimensions } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, FlatList, Image, Dimensions } from 'react-native';
 
 import Loader from '../../Component/Loader';
 
@@ -14,35 +14,36 @@ import ImageZoom from 'react-native-image-pan-zoom';
 
 
 
- export default class Home extends Component{
-     constructor(props){
-         super(props);
-         this.state={
-             userPosts:[],
-             skipCount:0,
-             isLoading:false,
-           
-         }
-     }
-     componentDidMount() {
+
+export default class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            userPosts: [],
+            skipCount: 0,
+            isLoading: false,
+
+        }
+    }
+    componentDidMount() {
         this.setState({
-            isLoading:true
+            isLoading: true
         })
         this.getUserPosts();
-    } 
+    }
     getUserPosts = () => {
-        const {skipCount,userPosts}=this.state;
+        const { skipCount, userPosts } = this.state;
 
         actions.getUserSearch({
-            searchType:"LEADERBOARD",
-            limit:6,
-            skip:skipCount
+            searchType: "LEADERBOARD",
+            limit: 6,
+            skip: skipCount
         })
             .then(response => {
-                console.log("get response >>>",response)
+
                 this.setState({
-                    isLoading:false,
-                    userPosts:[...userPosts,...response.data]
+                    isLoading: false,
+                    userPosts: [...userPosts, ...response.data]
                 })
             }).catch((error) => {
                 showMessage({
@@ -51,50 +52,52 @@ import ImageZoom from 'react-native-image-pan-zoom';
                     message: error.message
                 })
             });
-            
+
     }
-    _onEndReached =async() => {
-        const{skipCount}=this.state;
-        
+    _onEndReached = async () => {
+        const { skipCount } = this.state;
+
         await this.setState({
-            skipCount:skipCount+6,
-            isLoading:true
+            skipCount: skipCount + 6,
+            isLoading: true
         })
         this.getUserPosts();
     }
 
-   onOpenDrawer=()=>{
-       
-       const{navigation}=this.props;
-       navigation.openDrawer();
-   }
-     render(){
-         const{isLoading,userPosts}=this.state;
-         return(
-             <WrapperContainer>
-             <View style={{flex:1}} >
-                 <Header headerText='Mar 2021' onClickMenuIcon={this.onOpenDrawer}/>
-              {/* <View style={{flex:1}} >
-              <FlatList
-                    data={userPosts}
-                    numColumns={2}
-                    ListFooterComponent={()=><View style={{height:30}}><Loader isLoading={isLoading}/></View>}
-                    keyExtractor={(item,index) =>index.toString()}
-                    ItemSeparatorComponent={()=><View style={{height:15}}></View>}
-                    renderItem={({item}) => <UserPosts data={item} OnNavigate={this.OnNavigate}/>}
-                    onEndReached={this._onEndReached}  
-                    onEndReachedThreshold={0.9}    
-                /> 
-              </View> */}
-               <ImageZoom cropWidth={Dimensions.get('window').width}
+    onOpenDrawer = () => {
+
+        const { navigation } = this.props;
+        navigation.openDrawer();
+    }
+    render() {
+        const { isLoading, userPosts } = this.state;
+        return (
+            <WrapperContainer>
+
+                <Header headerText='Mar 2021' onClickMenuIcon={this.onOpenDrawer} />
+
+                <View style={{ flex: 1 }} >
+                    <FlatList
+                        data={userPosts}
+                        numColumns={2}
+                        ListFooterComponent={() => <View style={{ height: 30 }}><Loader isLoading={isLoading} /></View>}
+                        keyExtractor={(item, index) => index.toString()}
+                        ItemSeparatorComponent={() => <View style={{ height: 15 }}></View>}
+                        renderItem={({ item }) => <UserPosts data={item} />}
+                        onEndReached={this._onEndReached}
+                        onEndReachedThreshold={0.9}
+                    />
+                </View>
+
+                {/* <ImageZoom cropWidth={Dimensions.get('window').width}
                        cropHeight={Dimensions.get('window').height}
                        imageWidth={200}
                        imageHeight={200}>
                 <Image style={{width:200, height:200}}
                        source={{uri:'https://cdn.pixabay.com/photo/2014/02/27/16/10/tree-276014__340.jpg'}}/>
-            </ImageZoom>
-             </View>
-             </WrapperContainer>
-         )
-     }
- }
+            </ImageZoom> */}
+
+            </WrapperContainer>
+        )
+    }
+}

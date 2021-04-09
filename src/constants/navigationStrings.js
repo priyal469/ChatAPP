@@ -6,5 +6,8 @@ export default{
     SEARCH_POSTS:'search_posts',
     DRAWER_ROUTES:'drawer_routes',
     CHARTS:"charts",
+    QR_SCANNER:'qr_scanner',
+    USER_CHAT:'user_chat',
+    CHAT_INBOX:'chat_inbox',
 
 }

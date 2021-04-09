@@ -7,4 +7,6 @@ export default{
     homeIcon:require('../assets/images/homeIcon.png'),
     settingIcon:require('../assets/images/settingIcon.png'),
     chartIcon:require('../assets/images/chartIcon.png'),
+    userChatIcon:require('../assets/images/userChatIcon.png'),
+    QRscannerIcon:require('../assets/images/QRscannerIcon.png'),
 }

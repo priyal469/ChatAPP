@@ -8,6 +8,10 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import navigationStrings from "../constants/navigationStrings";
 import imagePath from "../constants/imagePath";
+import colors from "../styles/colors";
+import strings from "../constants/lang";
+import fontFamily from "../styles/fontFamily";
+import commonStyles from "../styles/commonStyles";
 
 
 export default function DrawerContent(props){
@@ -17,16 +21,16 @@ export default function DrawerContent(props){
                  <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
                     <View style={styles.userInfoSection}>
-                        <View style={{flexDirection:'row',marginTop: 15}}>
+                        <View style={styles.screenNameView}>
                             <Avatar.Image 
                                 source={{
                                     uri: 'https://img.freepik.com/free-photo/handsome-young-businessman-shirt-eyeglasses_85574-6228.jpg?size=626&ext=jpg'
                                 }}
                                 size={50}
                             />
-                            <View style={{marginLeft:15, flexDirection:'column'}}>
-                                <Title style={styles.title}>Priyal Sharma</Title>
-                                <Caption style={styles.caption}>priyalsh@gmail.com</Caption>
+                            <View style={styles.userInfo_text}>
+                                <Title style={styles.title}>{strings.USER_NAME_TEXT}</Title>
+                                <Text style={styles.caption} numberOfLines={1}>{strings.USER_EMAIL_TEXT}</Text>
                             </View>
                         </View>
 
@@ -38,7 +42,8 @@ export default function DrawerContent(props){
                             icon={({color, size}) => (
                               <Image source={imagePath.homeIcon} style={styles.icons}/>
                             )}
-                            label="Home"
+                           
+                          label={strings.HOME}
                             onPress={() => {navigation.navigate(navigationStrings.HOME)}}
                         />
                         <DrawerItem 
@@ -46,23 +51,30 @@ export default function DrawerContent(props){
                                <Image source={imagePath.searchIcon} style={styles.icons}/>
 
                             )}
-                            label="Search"
+                           label={strings.SEARCH}
                             onPress={() => {navigation.navigate(navigationStrings.SEARCH_POSTS)}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
                               <Image source={imagePath.chartIcon} style={styles.icons}/>
                             )}
-                            label="Charts"
+                            label={strings.CHARTS}
                             onPress={()=>{navigation.navigate(navigationStrings.CHARTS)}}
                            
                         />
                         <DrawerItem 
                           icon={({color, size}) => (
-                            <Image source={imagePath.settingIcon} style={styles.icons}/>
+                            <Image source={imagePath.QRscannerIcon} style={styles.icons}/>
                         )}
-                            label="Settings"
-                           
+                            label={strings.QR_SCANNER_CODE}
+                            onPress={()=>{navigation.navigate(navigationStrings.QR_SCANNER)}}
+                        />
+                        <DrawerItem 
+                          icon={({color, size}) => (
+                            <Image source={imagePath.userChatIcon} style={styles.icons}/>
+                        )}
+                            label={strings.CHAT}
+                            onPress={()=>{navigation.navigate(navigationStrings.USER_CHAT)}}
                         />
                         
                     </Drawer.Section>
@@ -77,23 +89,29 @@ export default function DrawerContent(props){
 const styles = StyleSheet.create({
     drawerContent: {
       flex: 1,
+      width:'100%',
+      
     },
     userInfoSection: {
-      paddingLeft: 20,
+      
+     marginHorizontal:20
+    
     },
     icons:{
       height:20,
       width:20,
-      resizeMode:'contain'
+      resizeMode:'contain',
+      
     },
     title: {
-      fontSize: 16,
+      ...commonStyles.fontSize16,
       marginTop: 3,
-      fontWeight: 'bold',
+     
     },
     caption: {
-      fontSize: 14,
-      lineHeight: 14,
+     ...commonStyles.fontSize14
+     
+     
     },
     row: {
       marginTop: 20,
@@ -123,4 +141,9 @@ const styles = StyleSheet.create({
       paddingVertical: 12,
       paddingHorizontal: 16,
     },
+    screenNameView:
+    {flexDirection:'row',marginTop: 15},
+
+    userInfo_text:
+    {marginLeft:10, flexDirection:'column'}
   });

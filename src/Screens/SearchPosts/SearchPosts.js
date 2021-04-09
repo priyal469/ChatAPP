@@ -4,7 +4,8 @@ import { showMessage } from 'react-native-flash-message';
 import Loader from '../../Component/Loader';
 import UserPosts from '../../Component/UserPosts';
 import WrapperContainer from '../../Component/WrapperContainer';
-import strings from '../../constants/lang/en';
+import strings from '../../constants/lang';
+
 import actions from '../../redux/actions';
 
  export default class SearchPosts extends Component{

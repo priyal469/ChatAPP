@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity ,Dimensions} from 'react-native';
+import ImageZoom from 'react-native-image-pan-zoom';
 import navigationStrings from '../constants/navigationStrings';
 
 
@@ -8,18 +9,23 @@ import fontFamily from '../styles/fontFamily';
 
 
 export default function UserPosts(props) {
-   const { data,OnNavigate} = props;
+   const { data} = props;
    return (
       <View style={styles.userPostView}>
-        
+        {/* <ImageZoom cropWidth={Dimensions.get('window').width}
+                       cropHeight={Dimensions.get('window').height}
+                       imageWidth={50}
+                       imageHeight={80}>
+                <Image style={{width:50, height:80,resizeMode:'contain'}}
+                       source={{uri:data.profileImg[1].original }}/>
+            </ImageZoom> */}
             <Image source={{ uri: data.profileImg[1].original }} style={styles.userPostImage} />
             
          <Text style={styles.fullName}>{data.fullName}</Text>
          <Text>{data.gender}</Text>
-         <TouchableOpacity onPress={OnNavigate}>
+        
          <Text>{data.addressDetails.city}</Text>
-         </TouchableOpacity>
-
+       
       </View>
    )
 }

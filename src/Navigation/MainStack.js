@@ -3,8 +3,10 @@ import {createStackNavigator} from "@react-navigation/stack";
 
 
 import navigationStrings from "../constants/navigationStrings";
-import TabRoutes from "./TabRoutes";
+
 import DrawerRoutes from "./DrawerRoutes";
+import { ChatInbox } from "../Screens";
+
 
 
 
@@ -21,6 +23,12 @@ export default function MainStack(){
                    options={{
                        headerShown:false
                    }}/>
+                   <Stack.Screen name={navigationStrings.CHAT_INBOX} component={ChatInbox}
+                   options={{
+                       headerShown:false
+                   }}/>
+                   
+                   
         </React.Fragment>
     )
 

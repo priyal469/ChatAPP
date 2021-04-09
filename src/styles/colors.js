@@ -1,5 +1,5 @@
 export default{
-    themeColor: '#1A76CA',
+    themeColor: '#FA8072',
     white:'#FFFFFF',
     lightgrey:'#DCDCDC',
     skyblue:'#76c7e8',

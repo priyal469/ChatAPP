@@ -10,11 +10,28 @@ export default StyleSheet.create({
          fontFamily:fontFamily.regular
        
     },
-    
+    fontSize12:{
+     fontSize:12,
+    },
    fontSize20:{
         fontSize:20,
         color:colors.black,
        
         fontFamily:fontFamily.semibold
-    }
+    },
+    fontSize16:{
+     fontSize: 16,
+     fontFamily:fontFamily.bold,
+    },
+    fontSize14:{
+     fontSize: 14,
+    },
+    fontSize13:{
+         fontSize:13
+    },
+    fontSize18:{
+         fontSize:18,
+         color:colors.black,
+    },
+    
 })
