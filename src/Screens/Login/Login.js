@@ -3,14 +3,11 @@ import { View, Text, StatusBar, Image } from 'react-native';
 import commonStyles from '../../styles/commonStyles';
 import imagePath from '../../constants/imagePath';
 import styles from './styles';
-import BorderTextInput from '../../Component/BorderTextInput';
-import SimpleBtn from '../../Component/SimpleBtn';
-import colors from '../../styles/colors';
+import actions from '../../redux/actions';
 import navigationStrings from '../../constants/navigationStrings';
-import Loader from '../../Component/Loader';
 import validator from '../../utils/validation';
 import { showMessage } from 'react-native-flash-message';
-import actions from '../../redux/actions';
+import colors from '../../styles/colors';
 import { LoginButton, AccessToken } from 'react-native-fbsdk';
 import {
   GoogleSignin,
@@ -20,6 +17,13 @@ import {
 import WrapperContainer from '../../Component/WrapperContainer';
 import strings from '../../constants/lang';
 GoogleSignin.configure();
+
+// Components
+import BorderTextInput from '../../Component/BorderTextInput';
+import SimpleBtn from '../../Component/SimpleBtn';
+import Loader from '../../Component/Loader';
+
+
 
 export default class Login extends Component {
   constructor(props) {

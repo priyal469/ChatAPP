@@ -1,12 +1,13 @@
-import React, { Compo, Component } from 'react';
+import React, {Component } from 'react';
 import { View, Text, TextInput, FlatList } from 'react-native';
 import { showMessage } from 'react-native-flash-message';
+import strings from '../../constants/lang';
+import actions from '../../redux/actions';
+
+// Components
 import Loader from '../../Component/Loader';
 import UserPosts from '../../Component/UserPosts';
 import WrapperContainer from '../../Component/WrapperContainer';
-import strings from '../../constants/lang';
-
-import actions from '../../redux/actions';
 
  export default class SearchPosts extends Component{
      constructor(props){

@@ -1,16 +1,18 @@
 import React ,{Component} from 'react';
 import {View,Text,Image,TextInput, StatusBar} from 'react-native';
-import SimpleBtn from '../../Component/SimpleBtn';
 import commonStyles from '../../styles/commonStyles';
 import styles from './styles';
 import imagePath from '../../constants/imagePath';
-import Loader from '../../Component/Loader';
 import actions from '../../redux/actions';
 import { showMessage } from 'react-native-flash-message';
 import navigationStrings from '../../constants/navigationStrings';
-import WrapperContainer from '../../Component/WrapperContainer';
 import colors from '../../styles/colors';
 import strings from '../../constants/lang';
+
+// Components
+import Loader from '../../Component/Loader';
+import WrapperContainer from '../../Component/WrapperContainer';
+import SimpleBtn from '../../Component/SimpleBtn';
 
 export default class OtpVerification extends Component{
     constructor(props){

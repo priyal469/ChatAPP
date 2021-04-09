@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { View, FlatList } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
-import Loader from '../../Component/Loader';
-import WrapperContainer from '../../Component/WrapperContainer';
 import actions from '../../redux/actions';
-
 import { showMessage } from 'react-native-flash-message';
+import navigationStrings from '../../constants/navigationStrings';
+
+// Components
 import UserChatList from '../../Component/UserChatList';
 import Header from '../../Component/Header';
-import navigationStrings from '../../constants/navigationStrings';
+import Loader from '../../Component/Loader';
+import WrapperContainer from '../../Component/WrapperContainer';
+
+
 export default class UserChat extends Component {
   constructor(props) {
     super(props);

@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, Image, Dimensions } from 'react-native';
-
-import Loader from '../../Component/Loader';
-
 import actions from "../../redux/actions"
-import UserPosts from '../../Component/UserPosts';
 import { showMessage } from 'react-native-flash-message';
-import Header from '../../Component/Header';
-import WrapperContainer from '../../Component/WrapperContainer';
 import colors from '../../styles/colors';
 import ImageZoom from 'react-native-image-pan-zoom';
 
+// Components
+import Header from '../../Component/Header';
+import WrapperContainer from '../../Component/WrapperContainer';
+import Loader from '../../Component/Loader';
+import UserPosts from '../../Component/UserPosts';
 
 
 
