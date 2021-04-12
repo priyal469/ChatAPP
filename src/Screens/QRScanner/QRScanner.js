@@ -79,10 +79,12 @@ export default class QRScanner extends Component {
         );
     }
 }
-const styles=StyleSheet.create({
-  qrCodeView:
-    { alignItems: 'center',
-     marginVertical: 20 }
+const styles = StyleSheet.create({
+    qrCodeView:
+    {
+        alignItems: 'center',
+        marginVertical: 20
+    }
 })
 
 

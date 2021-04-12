@@ -1,5 +1,5 @@
-import React,{Component} from "react";
-import{View,Text, ActivityIndicator,StyleSheet} from "react-native";
+import React from "react";
+import{View, ActivityIndicator,StyleSheet} from "react-native";
 import colors from "../styles/colors";
 
 
@@ -26,8 +26,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-
-    },
+       },
     
 })
 

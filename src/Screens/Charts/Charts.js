@@ -1,9 +1,10 @@
 import React,{Component} from 'react';
-import {View,ScrollView, TouchableOpacity,Text } from 'react-native';
-import { AreaChart, Grid,BarChart,StackedBarChart,LineChart,YAxis,XAxis } from 'react-native-svg-charts'
+import {View,ScrollView, TouchableOpacity,Text,StyleSheet } from 'react-native';
+import { Grid,LineChart,YAxis,XAxis } from 'react-native-svg-charts'
 import * as shape from 'd3-shape';
 import RazorpayCheckout from 'react-native-razorpay';
 import strings from '../../constants/lang';
+
 
  
  export default class Charts extends Component {
@@ -11,10 +12,10 @@ import strings from '../../constants/lang';
          super(props);
          this.state={}
      }
+
      onProceedToPay=() => {
         var options = {
           description: 'Credits towards consultation',
-        
           currency: 'INR',
           key: 'rzp_test_U3O5rR0kn11vwD', // Your api key
           amount: '5000',
@@ -40,13 +41,11 @@ import strings from '../../constants/lang';
  
         const contentInset = { top: 20, bottom: 20 }
         
-        
-       
-        return (
+           return (
             <ScrollView >
                 
         
-                 <View style={{ height: 200, flexDirection: 'row' }}>
+                 <View style={styles.chartView}>
                 <YAxis
                     data={data}
                     contentInset={contentInset}
@@ -68,7 +67,7 @@ import strings from '../../constants/lang';
                 </LineChart>
                
             </View>
-            <View style={{marginLeft:35,height:200}}>
+            <View style={styles.xAxisView}>
                 
                 <XAxis
                     // style={{ marginHorizontal: -10 }}
@@ -87,3 +86,15 @@ import strings from '../../constants/lang';
         )
     }
 }
+const styles=StyleSheet.create({
+ chartView:{
+    height: 200,
+   flexDirection: 'row' 
+  },
+
+xAxisView:{
+  marginLeft:35,
+  height:200
+},
+
+})

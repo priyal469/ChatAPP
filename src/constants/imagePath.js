@@ -8,5 +8,5 @@ export default{
     settingIcon:require('../assets/images/settingIcon.png'),
     chartIcon:require('../assets/images/chartIcon.png'),
     userChatIcon:require('../assets/images/userChatIcon.png'),
-    QRscannerIcon:require('../assets/images/QRscannerIcon.png'),
+    qrScannerIcon:require('../assets/images/qrScanner.png'),
 }

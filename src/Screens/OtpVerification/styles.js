@@ -16,11 +16,8 @@ export default StyleSheet.create({
         resizeMode:'contain',
         marginTop:50
     },
-    verification_text:{
-       
+    verificationText:{
         ...commonStyles.fontSize20,
-       
-       
         alignSelf:'center',
         marginTop:10
     },

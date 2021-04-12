@@ -10,6 +10,7 @@ import UserChatList from '../../Component/UserChatList';
 import Header from '../../Component/Header';
 import Loader from '../../Component/Loader';
 import WrapperContainer from '../../Component/WrapperContainer';
+import strings from '../../constants/lang';
 
 
 export default class UserChat extends Component {
@@ -67,7 +68,7 @@ export default class UserChat extends Component {
 console.log('in userchats>>>>>>>',userChats)
     return (
       <WrapperContainer>
-        <Header headerText='Chats'  onClickMenuIcon={this.onOpenDrawer}/>
+        <Header headerText={strings.CHAT}  onClickMenuIcon={this.onOpenDrawer}/>
         <View style={{ flex: 1 }} >
           <FlatList
             data={userChats}

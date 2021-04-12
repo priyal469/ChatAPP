@@ -1,12 +1,10 @@
 import React ,{Component} from 'react';
-import {View,Text,Image,TextInput, StatusBar} from 'react-native';
-import commonStyles from '../../styles/commonStyles';
+import {View,Text,Image,TextInput} from 'react-native';
 import styles from './styles';
 import imagePath from '../../constants/imagePath';
 import actions from '../../redux/actions';
 import { showMessage } from 'react-native-flash-message';
-import navigationStrings from '../../constants/navigationStrings';
-import colors from '../../styles/colors';
+
 import strings from '../../constants/lang';
 
 // Components
@@ -69,11 +67,11 @@ export default class OtpVerification extends Component{
                 
             <View style={styles.mainView}>
             <Image source={imagePath.appLogo} style={styles.appLogo}/>
-            <Text style={styles.verification_text}>{strings.VERIFICATION_TEXT}</Text>
+            <Text style={styles.verificationText}>{strings.VERIFICATION_TEXT}</Text>
             <Text style={styles.otpText1}>{strings.OTP_INFO_2}</Text>
              
              <TextInput placeholder={strings.ENTER_OTP}  onChangeText={text => this.setState({ otpInput: text })}/>
-             <SimpleBtn simpleBtn_Text={strings.VERIFY} onPresSimpleBtn={this._onClickSimpleBtn}/>
+             <SimpleBtn simpleBtnText={strings.VERIFY} onPresSimpleBtn={this._onClickSimpleBtn}/>
                <Loader isLoading={isLoading}/>
          </View>
          </WrapperContainer>

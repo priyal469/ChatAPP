@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, SafeAreaView, StatusBar} from 'react-native';
-
 import colors from '../styles/colors';
 
 const WrapperContainer = ({
@@ -12,6 +11,7 @@ const WrapperContainer = ({
 }) => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: statusBarColor}}>
+
       <StatusBar backgroundColor={statusBarColor} barStyle={barStyle} />
       <View style={{backgroundColor: bgColor, flex: 1}}>{children}</View>
      

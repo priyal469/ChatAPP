@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, Image, Dimensions } from 'react-native';
+import { View, FlatList,} from 'react-native';
 import actions from "../../redux/actions"
 import { showMessage } from 'react-native-flash-message';
-import colors from '../../styles/colors';
 import ImageZoom from 'react-native-image-pan-zoom';
 
 // Components
@@ -10,6 +9,7 @@ import Header from '../../Component/Header';
 import WrapperContainer from '../../Component/WrapperContainer';
 import Loader from '../../Component/Loader';
 import UserPosts from '../../Component/UserPosts';
+import strings from '../../constants/lang';
 
 
 
@@ -24,12 +24,14 @@ export default class Home extends Component {
 
         }
     }
+
     componentDidMount() {
         this.setState({
             isLoading: true
         })
         this.getUserPosts();
     }
+    
     getUserPosts = () => {
         const { skipCount, userPosts } = this.state;
 
@@ -73,7 +75,7 @@ export default class Home extends Component {
         return (
             <WrapperContainer>
 
-                <Header headerText='Mar 2021' onClickMenuIcon={this.onOpenDrawer} />
+                <Header headerText={strings.HOME} onClickMenuIcon={this.onOpenDrawer} />
 
                 <View style={{ flex: 1 }} >
                     <FlatList

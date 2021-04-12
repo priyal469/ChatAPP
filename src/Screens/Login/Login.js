@@ -33,10 +33,10 @@ export default class Login extends Component {
       phoneNumber: '',
     }
   }
-  onMove = () => {
-    const { navigation } = this.props;
-    navigation.navigate(navigationStrings.OTP_VERIFICATION)
-  }
+  // onMove = () => {
+  //   const { navigation } = this.props;
+  //   navigation.navigate(navigationStrings.OTP_VERIFICATION)
+  // }
 
   _onChangeText = (key) => {
     return (value) => {
@@ -130,11 +130,11 @@ export default class Login extends Component {
 
 
           <Image source={imagePath.appLogo} style={styles.appLogo} />
-          <Text style={styles.login_text}>{strings.LOGIN}</Text>
+          <Text style={styles.loginText}>{strings.LOGIN}</Text>
           <Text style={styles.otpText1}>{strings.OTP_INFO_1}</Text>
           <Text style={styles.otpText2}>{strings.PHN_NO_TEXT}</Text>
           <BorderTextInput placeholder={strings.ENTER_YOUR_NUMBER} _onChangeText={this._onChangeText} inputKey={'phoneNumber'} />
-          <SimpleBtn simpleBtn_Text={strings.GET_OTP} onPresSimpleBtn={this._onSendOtp} />
+          <SimpleBtn simpleBtnText={strings.GET_OTP} onPresSimpleBtn={this._onSendOtp} />
           <Loader isLoading={isLoading} />
 
           <GoogleSigninButton

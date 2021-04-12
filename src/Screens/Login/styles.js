@@ -29,7 +29,7 @@ export default StyleSheet.create({
         alignSelf:'center',
        
     },
-    login_text:{
+    loginText:{
        
         ...commonStyles.fontSize20,
        

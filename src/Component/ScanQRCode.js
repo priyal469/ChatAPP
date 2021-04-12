@@ -42,19 +42,22 @@ export function ScanQRCode(props) {
 const styles = StyleSheet.create({
   centerText: {
     flex: 1,
-    ...commonStyles.fontSize18,
+       ...commonStyles.fontSize18,
     padding: 32,
-
   },
+
   textBold: {
     fontFamily: fontFamily.bold,
     color: colors.white
   },
+
   buttonText: {
     fontSize: 21,
     color: colors.themeColor
   },
+
   buttonTouchable: {
     padding: 16
-  }
+  },
+  
 });

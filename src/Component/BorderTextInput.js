@@ -1,5 +1,5 @@
-import React,{Component} from "react";
-import{View,Text,StyleSheet,TextInput} from "react-native";
+import React from "react";
+import{StyleSheet,TextInput} from "react-native";
 
 import colors from "../styles/colors";
 
@@ -7,13 +7,13 @@ import colors from "../styles/colors";
 export default function BorderTextInput(props){
     const{placeholder,_onChangeText,inputKey}=props;
     return(
-        <TextInput placeholder={placeholder} style={styles.text_input}
+        <TextInput placeholder={placeholder} style={styles.textInput}
        onChangeText={_onChangeText(inputKey)}  maxLength = {10}
         />
     )
 }
 const styles=StyleSheet.create({
-    text_input:{
+    textInput:{
        borderWidth:1,
        borderColor:colors.themeColor,
        borderRadius:6,
