@@ -5,9 +5,8 @@ import {DrawerContentScrollView,DrawerItem} from "@react-navigation/drawer";
 import navigationStrings from "../constants/navigationStrings";
 import imagePath from "../constants/imagePath";
 import strings from "../constants/lang";
-import fontFamily from "../styles/fontFamily";
 import commonStyles from "../styles/commonStyles";
-
+import actions from '../redux/actions';
 
 export default function DrawerContent(props){
     const {navigation}=props;
@@ -70,7 +69,13 @@ export default function DrawerContent(props){
                             label={strings.CHAT}
                             onPress={()=>{navigation.navigate(navigationStrings.USER_CHAT)}}
                         />
-                        
+                         <DrawerItem 
+                          icon={({color, size}) => (
+                            <Image source={imagePath.logoutIcon} style={styles.icons}/>
+                        )}
+                            label={strings.LOGOUT}
+                           onPress={()=>actions.logout()}
+                        />
                     </Drawer.Section>
                   
                 </View>

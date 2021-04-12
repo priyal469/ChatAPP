@@ -9,4 +9,5 @@ export default{
     chartIcon:require('../assets/images/chartIcon.png'),
     userChatIcon:require('../assets/images/userChatIcon.png'),
     qrScannerIcon:require('../assets/images/qrScanner.png'),
+    logoutIcon:require('../assets/images/logoutIcon.png'),
 }

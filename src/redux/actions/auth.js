@@ -1,6 +1,6 @@
 import types from '../types';
 import {SEND_OTP,OTP_VERIFY,USER_POSTS,SEARCH, USER_CHAT} from '../../config/urls';
-import {apiPost,setUserData,apiGet} from '../../utils/utils';
+import {apiPost,setUserData,apiGet, clearUserData} from '../../utils/utils';
 import store from '../store';
 
  const{dispatch}=store;
@@ -35,6 +35,13 @@ export function onSendOTP(data = {}) {
       }).catch(error => {
         reject(error);
       })
+    })
+  }
+
+  export function logout(){
+    clearUserData();
+    dispatch({
+      type:types.LOGOUT,
     })
   }
   

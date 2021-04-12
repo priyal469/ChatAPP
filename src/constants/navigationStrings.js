@@ -9,5 +9,6 @@ export default{
     QR_SCANNER:'qrScanner',
     USER_CHAT:'userChat',
     CHAT_INBOX:'chatInbox',
+    
 
 }

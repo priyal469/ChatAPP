@@ -17,6 +17,7 @@ export default {
     CHAT: "Chats",
     USER_NAME_TEXT: 'Priyal Sharma',
     USER_EMAIL_TEXT: 'priyalsh@gmail.com',
+    LOGOUT:'Logout',
 
 
 }

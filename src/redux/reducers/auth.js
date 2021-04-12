@@ -15,6 +15,11 @@ const initialState={
                    ...state,
                    userData
                }
+
+               case types.LOGOUT:
+                   return{
+                       ...state,userData:{}
+                   }
             default:
             return state
         }
